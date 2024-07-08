@@ -34,4 +34,12 @@ class Persona {
     }
 }
 
+// Crea una instancia de la clase Persona llamada persona1 y
+// asigna valores a sus propiedades. Luego, llama al método
+// saludar()para que la persona imprima su saludo.
 
+let persona1 = new Persona ("Juan", "17", "hombre");
+
+document.querySelector("#resultado").innerHTML = /*html*/ `
+<h2>${persona1.saludar()}</h2>
+`;
