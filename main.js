@@ -30,7 +30,20 @@ class Persona {
         return this.sexo;
     }
     saludar(){
-        return `Hola, mi nombre es ${this.nombre}, tengo ${this.edad} años y soy ${this.sexo}`
+        return `Hola, mi nombre es ${this.nombre}, tengo ${this.edad} años, soy ${this.sexo}`
+    }
+
+    // Agrega un método estático a la clase Persona llamado
+    // esMayorDeEdad que reciba la edad de una persona como
+    // parámetro y retorne true si la persona es mayor de edad (18
+    // años o más),o false en caso contrario.
+
+    mayorDeEdad(edad) {
+        if (this.edad >= 18) {
+            return "soy mayor de edad";
+        } else {
+            return "soy menor de edad";
+        }
     }
 }
 
@@ -38,7 +51,7 @@ class Persona {
 // asigna valores a sus propiedades. Luego, llama al método
 // saludar()para que la persona imprima su saludo.
 
-let persona1 = new Persona ("Juan", "17", "hombre");
+let persona1 = new Persona ("Juan", 19, "hombre");
 
 document.querySelector("#resultado").innerHTML = /*html*/ `
 <h2>${persona1.saludar()}</h2>
@@ -58,8 +71,10 @@ class Estudiante extends Persona {
     get getCarrera(){
         return this.carrera;
     }
+    // Llama al método estático esMayorDeEdad() pasando la edad de
+    // la persona1 y muestra el resultado en la consola.
     estudiar(){
-        return `${this.saludar()} y estudio ${this.carrera}`;
+        return `${super.saludar()}, estudio ${this.carrera} y ${super.mayorDeEdad()}`;
     }
 }
 
@@ -69,7 +84,7 @@ class Estudiante extends Persona {
 // estudiar() para que el estudiante imprima el mensaje de su
 // carrera.
 
-let estudiante1 = new Estudiante ("Juan", "17", "hombre", "Artes audiovisuales");
+let estudiante1 = new Estudiante ("Juan", 17, "hombre", "Artes audiovisuales");
 
 document.querySelector("#resultado").innerHTML = /*html*/ `
 <h2>${estudiante1.estudiar()}</h2>
