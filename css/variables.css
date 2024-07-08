@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "fuente";
+    src: url(../storage/fonts/MontserratAlternates-Regular.ttf);
+}
+
+:root{
+    --color-1: rgb(120, 39, 187);
+    --color-2: rgb(0, 0, 0);
+}
