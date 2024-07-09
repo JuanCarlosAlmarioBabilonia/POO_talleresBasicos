@@ -89,3 +89,36 @@ let estudiante1 = new Estudiante ("Juan", 17, "hombre", "Artes audiovisuales");
 document.querySelector("#resultado").innerHTML = /*html*/ `
 <h2>${estudiante1.estudiar()}</h2>
 `;
+
+// Crea una clase llamada Animal con las siguientes propiedades:
+// nombre y edad. La clase debe tener un método llamado
+// hacerSonido que imprima en la consola el sonido del animal.
+
+class Animal{
+    nombre;
+    edad;
+    constructor(nombre, edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    set setNombre (nombre){
+        this.nombre = nombre;
+    }
+    get getNombre(){
+        return this.nombre;
+    }
+    set setEdad (edad){
+        this.edad = edad;
+    }
+    get getEdad(){
+        return this.edad;
+    }
+    hacerSonido(){
+        return `Mi mascota se llama ${this.nombre} y tiene ${this.edad} años`
+    }
+}
+
+let animal1 = new Animal("Oliver", 3);
+document.querySelector("#perro").innerHTML = /*html*/ `
+<h2>${animal1.hacerSonido()}</h2>
+`;
